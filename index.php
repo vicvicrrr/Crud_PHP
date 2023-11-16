@@ -7,7 +7,6 @@
     <title>CRUD</title>
 </head>
 <body>
-    <h1>teste</h1>
-    <button type="button" class="btn btn-secondary">Secondary</button>
+    
 </body>
 </html>
