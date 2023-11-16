@@ -9,6 +9,5 @@
 <body>
     <h1>teste</h1>
     <button type="button" class="btn btn-secondary">Secondary</button>
-    <h2>teste2</h2>
 </body>
 </html>
