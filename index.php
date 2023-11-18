@@ -9,15 +9,17 @@
 <body>
 
 <?php
-require_once 'banco\produto.php';
+require 'banco\Produto.php';
+require 'banco\ProdutoDAO.php';
 
-$produto = new Produto();
-$produto->setNome('relogio');
-$produto->setPreco('50');
-$produto->setQuantidade('10');
-$produto->setDescricao('relogio muito baum');
-var_dump($produto);
+$produto = new \banco\Produto();
+$produto->setNome('celular');
+$produto->setPreco('1500');
+$produto->setQuantidade('50');
+$produto->setDescricao('celular apple');
 
+$produtoDao = new \banco\ProdutoDao();
+$produtoDao->create($produto);
 ?>
 
     <h1>Login</h1>
