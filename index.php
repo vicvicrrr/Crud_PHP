@@ -8,22 +8,8 @@
 </head>
 <body>
 
-<?php
-require 'banco\Produto.php';
-require 'banco\ProdutoDAO.php';
-
-$produto = new \banco\Produto();
-$produto->setNome('celular');
-$produto->setPreco('1500');
-$produto->setQuantidade('50');
-$produto->setDescricao('celular apple');
-
-$produtoDao = new \banco\ProdutoDao();
-$produtoDao->create($produto);
-?>
-
     <h1>Login</h1>
-    <form method="POST" action="">
+    <form method="POST" action="crud.php">
 
         <input type="text" name="usuario" placeholder="Usuario">
         <br><br>
