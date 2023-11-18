@@ -1,3 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>CRUD-cadastro</title>
+</head>
+<body>
+<h1>Cadastro de Produto</h1>
+
+<form method="POST" action="">
+
+<input type="text" name="nome" placeholder="nome">
+<br><br>
+<input type="password" name="preco" placeholder="preço">
+<br><br>
+<input type="password" name="quantidade" placeholder="quantidade">
+<br><br>
+<input type="password" name="descricao" placeholder="descrição">
+<br><br>
+<input type="submit" name="cadastrar" value="cadastrar">
+
+</form>
+
+</body>
+</html>
+
 <?php
 
 require 'banco\Produto.php';
@@ -24,7 +52,6 @@ $deleted = 18;
 $produtoDao->read();
 
 foreach($produtoDao->read() as $produto){
-    echo $produto['id']."<br>".$produto['nome']."<hr>";
+    echo "<hr>".$produto['id']."<br>".$produto['nome']."<hr>";
+    echo "<input type='hiden' value='".htmlspecialchars($produto['id'])."'/><hr>";
 }
-
-
