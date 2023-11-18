@@ -8,20 +8,8 @@
 </head>
 <body>
 
-<?php
-require_once 'banco\produto.php';
-
-$produto = new Produto();
-$produto->setNome('relogio');
-$produto->setPreco('50');
-$produto->setQuantidade('10');
-$produto->setDescricao('relogio muito baum');
-var_dump($produto);
-
-?>
-
     <h1>Login</h1>
-    <form method="POST" action="">
+    <form method="POST" action="crud.php">
 
         <input type="text" name="usuario" placeholder="Usuario">
         <br><br>

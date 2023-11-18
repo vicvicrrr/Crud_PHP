@@ -1,6 +1,5 @@
 <?php
-
-
+namespace banco;
 
 class Produto{
 
