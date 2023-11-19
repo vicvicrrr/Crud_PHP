@@ -34,18 +34,18 @@ require 'banco\ProdutoDAO.php';
 
 $produto = new \banco\Produto();
 
-$teste='teste2';
-$produto->setId(1);
+$teste='qqqq';
+//$produto->setId(1);
 $produto->setNome($teste);
 $produto->setPreco('12');
-$produto->setQuantidade('1');
+$produto->setQuantidade('2');
 $produto->setDescricao('ddd');
 
 $produtoDao = new \banco\ProdutoDao();
 
 //$produtoDao->create($produto);
 
-$produtoDao->update($produto);
+//$produtoDao->update($produto);
 $deleted = 18;
 //$produtoDao->delete();
 
