@@ -27,7 +27,7 @@
 </html>
 
 <?php
-
+//header("Location: login.php");
 
 require 'banco\Produto.php';
 require 'banco\ProdutoDAO.php';
