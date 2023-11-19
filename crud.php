@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <title>CRUD-cadastro</title>
+    <title>CRUD-Cadastro</title>
 </head>
 <body>
 <h1>Cadastro de Produto</h1>
@@ -13,11 +13,11 @@
 
 <input type="text" name="nome" placeholder="nome">
 <br><br>
-<input type="password" name="preco" placeholder="preço">
+<input type="text" name="preco" placeholder="preço">
 <br><br>
-<input type="password" name="quantidade" placeholder="quantidade">
+<input type="text" name="quantidade" placeholder="quantidade">
 <br><br>
-<input type="password" name="descricao" placeholder="descrição">
+<input type="text" name="descricao" placeholder="descrição">
 <br><br>
 <input type="submit" name="cadastrar" value="cadastrar">
 
