@@ -1,3 +1,7 @@
+<?php
+session_start();
+require 'banco\conexao.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,19 +14,45 @@
 <body>
 
 <?php
-require_once 'banco\conexao.php';
+$dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+$conexao = new \banco\Conexao();
+if(!empty($dados['login_button'])){
+   
+    $query_usuario = "SELECT id, nome_usuario, senha_usuario FROM usuarios WHERE nome_usuario =:usuario LIMIT 1";
+    
+    $res = $conexao->getConn()->prepare($query_usuario);
+    $res->bindParam(':usuario', $dados['usuario']);
+    $res->execute();
 
+    if(($res) AND ($res->rowCount() != 0)){
+        $row_usuario = $res->fetch(PDO::FETCH_ASSOC);
+        var_dump($row_usuario);
+        if(password_verify($dados['senha'], $row_usuario['senha_usuario'])){
+            echo "logado!";
+        }else{
+            $_SESSION['msg'] = "<p style='color: #ff0000'>ERRO! Usuario ou Senha incorreta!</p>";
+        }
+    }else{
+        $_SESSION['msg'] = "<p style='color: #ff0000'>ERRO! Usuario ou Senha incorreta!</p>";
+    }
+
+    if(isset($_SESSION['msg'])){
+        echo $_SESSION['msg'];
+        unset($_SESSION['msg']);
+    }
+    
+}
 
 ?>
 
     <h1>Login</h1>
-    <form method="POST" action="crud.php">
+    <form method="POST" action="">
 
-        <input type="text" name="usuario" placeholder="Usuario">
+        <input class="form-control" type="text" name="usuario" placeholder="Usuario">
         <br><br>
-        <input type="password" name="senha" placeholder="senha">
+        <input class="form-control" type="password" name="senha" placeholder="senha">
         <br><br>
-        <input type="submit" name="login" value="Entrar">
+        <input type="submit" name="login_button" value="Entrar">
 
     </form>
 
@@ -31,4 +61,3 @@ require_once 'banco\conexao.php';
     
 </body>
 </html>
- 
