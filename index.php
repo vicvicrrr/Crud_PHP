@@ -1,5 +1,6 @@
 <?php
 session_start();
+ob_start();
 require 'banco\conexao.php';
 ?>
 <!DOCTYPE html>
@@ -26,23 +27,20 @@ if(!empty($dados['login_button'])){
 
     if(($res) AND ($res->rowCount() != 0)){
         $row_usuario = $res->fetch(PDO::FETCH_ASSOC);
-        var_dump($row_usuario);
+        
         if(password_verify($dados['senha'], $row_usuario['senha_usuario'])){
-            echo "logado!";
+            header("Location: crud.php");
         }else{
             $_SESSION['msg'] = "<p style='color: #ff0000'>ERRO! Usuario ou Senha incorreta!</p>";
         }
     }else{
         $_SESSION['msg'] = "<p style='color: #ff0000'>ERRO! Usuario ou Senha incorreta!</p>";
     }
-
     if(isset($_SESSION['msg'])){
         echo $_SESSION['msg'];
         unset($_SESSION['msg']);
     }
-    
 }
-
 ?>
 
     <h1>Login</h1>
