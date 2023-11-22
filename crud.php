@@ -26,47 +26,39 @@ require 'banco\ProdutoDAO.php';
 </header>
 <?php
 
-
+$dado_prod = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 $produto = new \banco\Produto();
-
-$teste='qqqq';
-//$produto->setId(1);
-$produto->setNome($teste);
-$produto->setPreco('12');
-$produto->setQuantidade('2');
-$produto->setDescricao('ddd');
-
 $produtoDao = new \banco\ProdutoDao();
 
-//$produtoDao->create($produto);
-
-//$produtoDao->update($produto);
-$deleted = 18;
-//$produtoDao->delete();
+//$produto->setId(1);
 
 
-$produtoDao->read();
+if(!empty($dado_prod['cadas_prod']) AND !empty($dado_prod['nome_prod'])){
+    $produto->setNome($dado_prod['nome_prod']);
+    $produto->setPreco($dado_prod['preco_prod']);
+    $produto->setQuantidade($dado_prod['quant_prod']);
+    $produto->setDescricao($dado_prod['descr_prod']);
+    
+    $produtoDao->create($produto);
 
-foreach($produtoDao->read() as $produto){
-    echo "<hr>".$produto['id']."<br>".$produto['nome']."<hr>";
-    echo "<input type='hiden' value='".htmlspecialchars($produto['id'])."'/><hr>";
+    header("Location: crud_db.php");
+}else{
+    echo "<h3>adicione um produto!</h3>";
 }
-?>
 
-<h1>Cadastro de Produto</h1>
+?>
 
 <form method="POST" action="">
 
-<input type="text" name="nome" placeholder="nome">
+<input class="form-control" type="text" name="nome_prod" placeholder="nome">
 <br><br>
-<input type="text" name="preco" placeholder="preço">
+<input class="form-control" type="text" name="preco_prod" placeholder="preço">
 <br><br>
-<input type="text" name="quantidade" placeholder="quantidade">
+<input class="form-control" type="text" name="quant_prod" placeholder="quantidade">
 <br><br>
-<input type="text" name="descricao" placeholder="descrição">
+<input class="form-control" type="text" name="descr_prod" placeholder="descrição">
 <br><br>
-<input type="submit" name="cadastrar" value="cadastrar">
-
+<input type="submit" name="cadas_prod" value="cadastrar">
 </form>
 
 </body>
