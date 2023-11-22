@@ -20,7 +20,7 @@ require 'banco\conexao.php';
     
 
     if(!empty($dado['cad_login_button'])){
-        if(!empty($dado['cad_usuario']) AND !empty($dado['cad_senha'])){
+        if((!empty($dado['cad_usuario'])) AND (!empty($dado['cad_senha']))){
         $senhaHash = password_hash($dado['cad_senha'], PASSWORD_DEFAULT);
             $query_insert = "INSERT INTO usuarios (nome_usuario, senha_usuario) VALUES (?, ?)";
                 $resCon = $conexao->getConn()->prepare($query_insert);
@@ -36,6 +36,7 @@ require 'banco\conexao.php';
                 unset($_SESSION['msg']);
             }
     }
+    
     ?>
 
     <h1>Criar conta</h1>

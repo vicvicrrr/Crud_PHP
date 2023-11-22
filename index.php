@@ -29,6 +29,8 @@ if(!empty($dados['login_button'])){
         $row_usuario = $res->fetch(PDO::FETCH_ASSOC);
         
         if(password_verify($dados['senha'], $row_usuario['senha_usuario'])){
+            $_SESSION['id'] = $row_usuario['id'];
+            $_SESSION['usuario'] = $row_usuario['nome_usuario'];
             header("Location: crud.php");
         }else{
             $_SESSION['msg'] = "<p style='color: #ff0000'>ERRO! Usuario ou Senha incorreta!</p>";
@@ -36,19 +38,25 @@ if(!empty($dados['login_button'])){
     }else{
         $_SESSION['msg'] = "<p style='color: #ff0000'>ERRO! Usuario ou Senha incorreta!</p>";
     }
-    if(isset($_SESSION['msg'])){
-        echo $_SESSION['msg'];
-        unset($_SESSION['msg']);
-    }
+}
+if(isset($_SESSION['msg'])){
+    echo $_SESSION['msg'];
+    unset($_SESSION['msg']);
 }
 ?>
 
     <h1>Login</h1>
     <form method="POST" action="">
 
-        <input class="form-control" type="text" name="usuario" placeholder="Usuario">
+        <input class="form-control" type="text" name="usuario" value="<?php 
+        if(isset($dados['usuario'])){
+            echo $dados['usuario'];
+        }?>"placeholder="Usuario">
         <br><br>
-        <input class="form-control" type="password" name="senha" placeholder="senha">
+        <input class="form-control" type="password" name="senha" value="<?php 
+        if(isset($dados['senha'])){
+            echo $dados['senha'];
+        }?>" placeholder="senha">
         <br><br>
         <input type="submit" name="login_button" value="Entrar">
 

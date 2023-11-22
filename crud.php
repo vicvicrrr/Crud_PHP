@@ -1,3 +1,16 @@
+<?php
+session_start();
+ob_start();
+
+if((!isset($_SESSION['id'])) AND (!isset($_SESSION['usuario']))){
+    $_SESSION['msg'] = "<p style='color: #ff0000'>ERRO! Pagina restrita, faça o login para acessar a pagina!</p>";
+    header("Location: index.php");
+}
+
+require 'banco\Produto.php';
+require 'banco\ProdutoDAO.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,30 +20,12 @@
     <title>CRUD-Cadastro</title>
 </head>
 <body>
-<h1>Cadastro de Produto</h1>
-
-<form method="POST" action="">
-
-<input type="text" name="nome" placeholder="nome">
-<br><br>
-<input type="text" name="preco" placeholder="preço">
-<br><br>
-<input type="text" name="quantidade" placeholder="quantidade">
-<br><br>
-<input type="text" name="descricao" placeholder="descrição">
-<br><br>
-<input type="submit" name="cadastrar" value="cadastrar">
-
-</form>
-
-</body>
-</html>
-
+<header id="head">
+        <h1>Cadastro de Produtos</h1>
+        <a href="logout.php">Sair</a>
+</header>
 <?php
-//header("Location: login.php");
 
-require 'banco\Produto.php';
-require 'banco\ProdutoDAO.php';
 
 $produto = new \banco\Produto();
 
@@ -56,3 +51,24 @@ foreach($produtoDao->read() as $produto){
     echo "<hr>".$produto['id']."<br>".$produto['nome']."<hr>";
     echo "<input type='hiden' value='".htmlspecialchars($produto['id'])."'/><hr>";
 }
+?>
+
+<h1>Cadastro de Produto</h1>
+
+<form method="POST" action="">
+
+<input type="text" name="nome" placeholder="nome">
+<br><br>
+<input type="text" name="preco" placeholder="preço">
+<br><br>
+<input type="text" name="quantidade" placeholder="quantidade">
+<br><br>
+<input type="text" name="descricao" placeholder="descrição">
+<br><br>
+<input type="submit" name="cadastrar" value="cadastrar">
+
+</form>
+
+</body>
+</html>
+
