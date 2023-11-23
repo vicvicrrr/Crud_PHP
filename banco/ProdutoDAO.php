@@ -8,13 +8,11 @@ class ProdutoDao{
 
     public function create(Produto $p){
 
-        $sql= 'INSERT INTO produtos (nome, preco, quantidade, descricao) VALUES (?,?,?,?)';
+        $sql= 'INSERT INTO produtos (nome, descricao) VALUES (?,?)';
 
         $stmt = Conexao::getConn()->prepare($sql);
         $stmt->bindValue(1, $p->getNome());
-        $stmt->bindValue(2, $p->getPreco());
-        $stmt->bindValue(3, $p->getQuantidade());
-        $stmt->bindValue(4, $p->getDescricao());
+        $stmt->bindValue(2, $p->getDescricao());
 
         $stmt->execute();
     }
@@ -32,14 +30,12 @@ class ProdutoDao{
     }
 
     public function update(Produto $p){
-        $sql= 'UPDATE produtos SET nome = ?, preco = ?, quantidade = ?, descricao = ? WHERE id = ? ';
+        $sql= 'UPDATE produtos SET nome = ?, descricao = ? WHERE id = ? ';
         
         $stmt = Conexao::getConn()->prepare($sql);
         $stmt->bindValue(1, $p->getNome());
-        $stmt->bindValue(2, $p->getPreco());
-        $stmt->bindValue(3, $p->getQuantidade());
-        $stmt->bindValue(4, $p->getDescricao());
-        $stmt->bindValue(5, $p->getId());
+        $stmt->bindValue(2, $p->getDescricao());
+        $stmt->bindValue(3, $p->getId());
 
         $stmt->execute();
     }

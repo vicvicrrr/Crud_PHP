@@ -34,14 +34,14 @@ $produtoDao = new \banco\ProdutoDao();
 
 
 if(!empty($dado_prod['cadas_prod']) AND !empty($dado_prod['nome_prod'])){
-    $produto->setNome($dado_prod['nome_prod']);
-    $produto->setPreco($dado_prod['preco_prod']);
-    $produto->setQuantidade($dado_prod['quant_prod']);
-    $produto->setDescricao($dado_prod['descr_prod']);
     
+    $produto->setNome($dado_prod['nome_prod']);
+    $produto->setDescricao($dado_prod['descr_prod']);
+
     $produtoDao->create($produto);
 
     header("Location: crud_db.php");
+
 }else{
     echo "<h3>adicione um produto!</h3>";
 }
@@ -51,10 +51,6 @@ if(!empty($dado_prod['cadas_prod']) AND !empty($dado_prod['nome_prod'])){
 <form method="POST" action="">
 
 <input class="form-control" type="text" name="nome_prod" placeholder="nome">
-<br><br>
-<input class="form-control" type="text" name="preco_prod" placeholder="preço">
-<br><br>
-<input class="form-control" type="text" name="quant_prod" placeholder="quantidade">
 <br><br>
 <input class="form-control" type="text" name="descr_prod" placeholder="descrição">
 <br><br>
