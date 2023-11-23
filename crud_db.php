@@ -16,7 +16,7 @@ require 'banco\ProdutoDAO.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CRUD-Alterar</title>
 </head>
 <body>
 <header id="head">
@@ -34,17 +34,23 @@ $produtoDao = new \banco\ProdutoDao();
 
 
 //$produtoDao->update($produto);
-if(!empty($_POST['id'])){
-$produtoDao->delete($_POST['id']);
+if(!empty($_POST['idI'])){
+$produtoDao->delete($_POST['idI']);
 }
-
+if(!empty($produtoDao->read($produto->getNome()))){
  foreach($produtoDao->read() as $produto){
      echo "<hr>".$produto['id']."<br>".$produto['nome']."<hr>";
      //echo "<input type='hiden' value='".htmlspecialchars($produto['id'])."'/><hr>";
 
+     echo '<p name="nome" contenteditable="true">'.$produto['nome'].'</p>';
+
+
      ?><form action="" method="POST">
-       <input type="hidden" name="id" value="<?php echo $produto['id'];?>">
+       <input type="hidden" name="idI" value="<?php echo $produto['id'];?>">
        <input type="submit" name="deletar" value="deletar">
        </form><?php
+ }
+ }else{
+    echo "<p style='color: #ff0000'>Não a nada no banco!</p>";
  }
 ?>
