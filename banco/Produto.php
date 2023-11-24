@@ -3,7 +3,7 @@ namespace banco;
 
 class Produto{
 
-    private $id, $nome, $preco, $quantidade, $descricao;
+    private $id, $nome, $descricao;
 
     public function getId(){
         return $this->id;
@@ -19,22 +19,6 @@ class Produto{
 
     public function setNome($nome){
         return $this->nome = $nome;
-    }
-
-    public function getPreco(){
-        return $this->preco;
-    }
-
-    public function setPreco($preco){
-        return $this->preco = $preco;
-    }
-
-    public function getQuantidade(){
-        return $this->quantidade;
-    }
-
-    public function setQuantidade($quantidade){
-        return $this->quantidade = $quantidade;
     }
 
     public function getDescricao(){

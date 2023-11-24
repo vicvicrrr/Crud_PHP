@@ -1,0 +1,30 @@
+
+body{
+    background-color:rgb(247, 247, 247);
+}
+*{
+    padding: 6px;
+    background-color:rgb(247, 247, 247);
+}
+#head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: content-box;  
+    border: 1px solid rgb(133, 130, 130);
+    border-radius: 5px;
+    background-color: rgb(247 247 247);
+}
+#out{
+    margin-left: 150px;
+}
+#forms{
+    display: flex;
+    box-sizing: content-box;  
+    border: 1px solid rgb(133, 130, 130);
+    border-radius: 5px;
+    background-color: rgb(247 247 247);
+}
+#form1{
+    display: flex;
+}
