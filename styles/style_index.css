@@ -1,3 +1,60 @@
 body{
-    padding: 10px;
+    background-color:#e5e5e5;
+}
+*{
+    padding: 6px;
+    background-color:#e5e5e5;
+}
+
+#header_login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: content-box;  
+    border: 1px solid rgb(133, 130, 130);
+    border-radius: 5px;
+    background-color: rgb(247 247 247);
+}
+#form_login_div{
+    width: 500px; 
+    margin-left: auto;
+    margin-right: auto; 
+
+    box-sizing: content-box;  
+    border: 1px solid rgb(133, 130, 130);
+    border-radius: 5px;
+    background-color: rgb(247 247 247);
+}
+#form{
+    padding: 20px;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto; 
+    background-color: rgb(247 247 247);
+}
+#input_usuario{
+    width:320px
+}
+#input_senha{
+    width:350px
+}
+h1{
+    background-color: rgb(247 247 247);
+}
+a{
+    background-color: rgb(247 247 247);
+}
+#nome_div{
+    background-color: rgb(247 247 247);
+
+}
+
+#eye{
+    display: flex;
+    background-color: rgb(247 247 247);
+}
+i{
+    font-size: 20px;
+    background-color: rgb(247 247 247);
+    cursor: pointer;
 }

@@ -1,0 +1,60 @@
+body{
+    background-color:#e5e5e5;
+}
+*{
+    padding: 6px;
+    background-color:#e5e5e5;
+}
+#header_criar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: content-box;  
+    border: 1px solid rgb(133, 130, 130);
+    border-radius: 5px;
+    background-color: rgb(247 247 247);
+}
+#form_div{
+    width: 500px; 
+    margin-left: auto;
+    margin-right: auto; 
+
+    box-sizing: content-box;  
+    border: 1px solid rgb(133, 130, 130);
+    border-radius: 5px;
+    background-color: rgb(247 247 247);
+}
+#form{
+    padding: 20px;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto; 
+    background-color: rgb(247 247 247);
+}
+#usuario{
+    width:320px
+
+}
+#senha{
+    width:320px
+
+}
+#div_name{
+    background-color: rgb(247 247 247);
+}
+#eye{
+    display: flex;
+    background-color: rgb(247 247 247);
+
+}
+i{
+    font-size: 20px;
+    background-color: rgb(247 247 247);
+    cursor: pointer;
+}
+h1{
+    background-color: rgb(247 247 247);
+}
+a{
+    background-color: rgb(247 247 247);
+}

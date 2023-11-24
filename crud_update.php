@@ -24,8 +24,9 @@ require 'banco\ProdutoDAO.php';
 <body>
 
 <header id="head">
+<a id="out_page" href='crud_insert.php'><button class="bi bi-arrow-left"> Voltar</button></a>
         <h1>Alterar Produtos</h1>
-        <a id="out" href='logout.php'><button class="bi bi-box-arrow-left"> Sair</button></a>
+        <a id="out" href='logout.php'><button class="bi bi-box-arrow-left"> Logout</button></a>
     
         
 </header>
@@ -56,19 +57,19 @@ require 'banco\ProdutoDAO.php';
             <br>
         <div id="forms">
         <form id="form1" action="" method="POST">
-        <input type="hidden" name="id_update" value="<?php echo $produto['id'];?>">
+        <input id="input_id" type="hidden" name="id_update" value="<?php echo $produto['id'];?>">
         <h5>nome:</h5>
-        <input type="text" name="nome_update" value="<?php echo $produto['nome'];?>">
+        <input id="input_nome" type="text" name="nome_update" value="<?php echo $produto['nome'];?>">
         <h5>descrição:</h5>
-        <input type="text"  name="descricao_update" value="<?php echo $produto['descricao'];?>">
+        <input id="input_des" type="text" name="descricao_update" value="<?php echo $produto['descricao'];?>">
         <p></p>
-        <input type="submit" id="update" onclick="alerta()" name="btn_update" value="Update">
+        <input type="submit" class="btn btn-dark" id="update" onclick="alerta()" name="btn_update" value="Update">
         </form>
         
         
          <form id="form1" action="" method="POST">
            <input type="hidden" name="idI" value="<?php echo $produto['id'];?>">
-           <input type="submit" onclick="delet()" name="deletar" value="deletar">
+           <input type="submit" class="btn btn-dark" onclick="delet()" name="deletar" value="deletar">
            </form>
            </div>
                 <br>
@@ -76,11 +77,11 @@ require 'banco\ProdutoDAO.php';
         <?php
      }
      }else{
-        echo "<p style='color: #ff0000'>Não a nada no banco!</p>";
+        echo "<h2 style='color: #ff0000'>Não a nada no banco!</h2>";
      }
         ?>
-
+    
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-<script src="jqueryJs/script1.js"></script>
+<script src="jqueryJs/script_update.js"></script>
 </body>
 </html>

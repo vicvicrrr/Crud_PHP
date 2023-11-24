@@ -23,8 +23,8 @@ require 'banco\ProdutoDAO.php';
 </head>
 <body>
 <header id="head">
-        <h1>Cadastro de Produtos</h1>
-        <a href='logout.php'><button class="bi bi-box-arrow-left"> Sair</button></a>
+        <h1 id="layout_cad">Cadastro de Produtos</h1>
+        <a id="out" href='logout.php'><button class="bi bi-box-arrow-left"> Logout</button></a>
 </header>
 <?php
 
@@ -45,19 +45,22 @@ if(!empty($dado_prod['cadas_prod']) AND !empty($dado_prod['nome_prod'])){
     header("Location: crud_update.php");
 
 }else{
-    echo "<h3>adicione um produto!</h3>";
+    echo '<br><h3 id="add">adicione um produto!</h3><br>';
 }
 
 ?>
-
-<form method="POST" action="">
-
-<input class="form-control" type="text" name="nome_prod" placeholder="nome">
-<br><br>
-<input class="form-control" type="text" name="descr_prod" placeholder="descrição">
-<br><br>
-<input type="submit" name="cadas_prod" value="cadastrar">
+<div id="form_insert">
+<form id="form_fora"  method="POST" action="">
+<div id="form_div">
+<input class="form-control" id="nome_input" type="text" name="nome_prod" placeholder="nome">
+<br>
+<input class="form-control" id="desc_input" type="text" name="descr_prod" placeholder="descrição">
+<br>
+<input id="btn_insert" class="btn btn-dark" type="submit" name="cadas_prod" value="cadastrar">
+</div>
 </form>
+<a id="out_page" href='crud_update.php'><input id="btn_banco" class="btn btn-secondary" type="submit" name="cadas_prod" value="Ver Produtos"></a>
+</div>
 
 </body>
 </html>

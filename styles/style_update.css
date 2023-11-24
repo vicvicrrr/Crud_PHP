@@ -1,10 +1,10 @@
 
 body{
-    background-color:rgb(247, 247, 247);
+    background-color:#e5e5e5;
 }
 *{
     padding: 6px;
-    background-color:rgb(247, 247, 247);
+    background-color:#e5e5e5;
 }
 #head{
     display: flex;
@@ -15,16 +15,49 @@ body{
     border-radius: 5px;
     background-color: rgb(247 247 247);
 }
+#out_page{
+    background-color: rgb(247 247 247);
+    margin-right: 150px;
+}
 #out{
+    background-color: rgb(247 247 247);
+
     margin-left: 150px;
 }
 #forms{
+    width: 800px; 
+    margin-left: auto;
+    margin-right: auto; 
     display: flex;
+
     box-sizing: content-box;  
     border: 1px solid rgb(133, 130, 130);
     border-radius: 5px;
     background-color: rgb(247 247 247);
 }
+
 #form1{
     display: flex;
+    background-color: rgb(247 247 247);
+
+}
+h1{
+    background-color: rgb(247 247 247);
+
+}
+h5{
+    background-color: rgb(247 247 247);
+
+}
+#input_nome{
+    background-color: rgb(247 247 247);
+
+}
+#input_des{
+    background-color: rgb(247 247 247);
+
+}
+p{
+    background-color: rgb(247 247 247);
+
 }

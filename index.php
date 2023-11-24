@@ -9,10 +9,16 @@ require 'banco\conexao.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=\, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="styles/style_index.css">
     <title>CRUD-Enter</title>
 </head>
 <body>
+<header id="header_login">
+    <h1>Cadastro</h1>
+</header>
+<br>
+
 
 <?php
 $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
@@ -45,25 +51,32 @@ if(isset($_SESSION['msg'])){
 }
 ?>
 
-    <h1>Login</h1>
-    <form method="POST" action="">
-
-        <input class="form-control" type="text" name="usuario" value="<?php 
+    <br><br>
+    <div id="form_login_div">
+    <form id="form" method="POST" action="">
+        <br>
+        <div id="nome_div">
+        <input id="input_usuario" class="form-control" type="text" name="usuario" value="<?php 
         if(isset($dados['usuario'])){
             echo $dados['usuario'];
         }?>"placeholder="Usuario">
-        <br><br>
-        <input class="form-control" type="password" name="senha" value="<?php 
+        </div>
+        <br>
+        <div id="eye">
+        <input id="input_senha" class="form-control" type="password" name="senha" value="<?php 
         if(isset($dados['senha'])){
             echo $dados['senha'];
         }?>" placeholder="senha">
-        <br><br>
-        <input type="submit" name="login_button" value="Entrar">
-
+        <i id="btn_eye" class="bi bi-eye"onclick="mostrar()"></i>
+        </div>
+        <br>
+        <input class="btn btn-dark" type="submit" name="login_button" value="Entrar">
     </form>
-
-    <br>
-    <a href="login.php">Não tem uma conta?</a>
     
+    
+    <a href="login.php">Não tem uma conta?</a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="jqueryJs/script_index.js"></script>
 </body>
 </html>

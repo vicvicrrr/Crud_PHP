@@ -1,0 +1,70 @@
+body{
+    background-color:#e5e5e5;
+}
+*{
+    padding: 6px;
+    background-color:#e5e5e5;
+}
+#head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: content-box;  
+    border: 1px solid rgb(133, 130, 130);
+    border-radius: 5px;
+    background-color: rgb(247 247 247);
+}
+#layout_cad{
+    background-color: rgb(247 247 247);
+    margin-left: 240px;
+}
+#out{
+    background-color: rgb(247 247 247);
+    margin-left: 150px;
+}
+#add{
+    width: 300px; 
+    margin-left: auto;
+    margin-right: auto; 
+}
+#form_insert{
+    padding-bottom: 30px;
+    width: 600px; 
+    margin-left: auto;
+    margin-right: auto; 
+
+    box-sizing: content-box;  
+    border: 1px solid rgb(133, 130, 130);
+    border-radius: 5px;
+    background-color: rgb(247 247 247);
+}
+#form_div{
+    padding: 20px;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto; 
+    background-color: rgb(247 247 247);
+
+}
+#form_fora{
+    background-color: rgb(247 247 247);
+
+}
+#nome_input{
+    width:350px
+}
+#desc_input{
+    width:350px
+}
+#btn_insert{
+    width: 350px;
+    justify-content: center;
+    align-items: center;
+}
+#btn_banco{
+    width: 350px;
+    margin-left: 115px;
+}
+a{
+    background-color: rgb(247 247 247);
+}
