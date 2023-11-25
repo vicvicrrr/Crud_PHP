@@ -24,7 +24,7 @@ body{
 
     margin-left: 150px;
 }
-#forms{
+#div_update_bloco{
     width: 800px; 
     margin-left: auto;
     margin-right: auto; 
@@ -36,10 +36,13 @@ body{
     background-color: rgb(247 247 247);
 }
 
-#form1{
+#div_update{
     display: flex;
     background-color: rgb(247 247 247);
-
+}
+#form_delete{
+    display: flex;
+    background-color: rgb(247 247 247);
 }
 h1{
     background-color: rgb(247 247 247);
@@ -49,11 +52,13 @@ h5{
     background-color: rgb(247 247 247);
 
 }
-#input_nome{
+.nome_class{
+    width:200px;
     background-color: rgb(247 247 247);
 
 }
-#input_des{
+.desc_class{
+    width:200px;
     background-color: rgb(247 247 247);
 
 }

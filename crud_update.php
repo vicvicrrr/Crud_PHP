@@ -42,39 +42,43 @@ require 'banco\ProdutoDAO.php';
 
     if(!empty($produtoDao->read($produto->getNome()))){
 
-        if(!empty($_POST['id_update'])){
-        $produto->setId($_POST['id_update']);
-        $produto->setNome($_POST['nome_update']);
-        $produto->setDescricao($_POST['descricao_update']);
-
-        $produtoDao->update($produto);
-        }
-
-
+        $controle = 1; 
      foreach($produtoDao->read() as $produto){
         
         ?>
-            <br>
-        <div id="forms">
-        <form id="form1" action="" method="POST">
-        <input id="input_id" type="hidden" name="id_update" value="<?php echo $produto['id'];?>">
-        <h5>nome:</h5>
-        <input id="input_nome" type="text" name="nome_update" value="<?php echo $produto['nome'];?>">
-        <h5>descrição:</h5>
-        <input id="input_des" type="text" name="descricao_update" value="<?php echo $produto['descricao'];?>">
-        <p></p>
-        <input type="submit" class="btn btn-dark" id="update" onclick="alerta()" name="btn_update" value="Update">
-        </form>
-        
-        
-         <form id="form1" action="" method="POST">
-           <input type="hidden" name="idI" value="<?php echo $produto['id'];?>">
-           <input type="submit" class="btn btn-dark" onclick="delet()" name="deletar" value="deletar">
-           </form>
-           </div>
-                <br>
+        <!--divs de update-->
 
+            <br>
+        <div id="div_update_bloco">
+
+        <div id="div_update">
+
+            <input type="hidden" id="input_id<?php echo $controle;?>" value="<?php echo $produto['id'];?>">
+
+            <h5>nome: </h5>
+            <h5 class="nome_class" onclick="clickDuplo(conn=<?php echo $controle;?>)" id="input_nome<?php echo $controle;?>" contenteditable="true"><?php echo $produto['nome'];?></h5>
+
+            <h5>descrição: </h5>
+            <h5 class="desc_class" id="input_des<?php echo $controle;?>" contenteditable="true"><?php echo $produto['descricao'];?></h5>
+                <p></p>
+
+            <input type="submit" class="btn btn-dark" id="btn_update<?php echo $controle;?>" onclick="alerta(controle=<?php echo $controle;?>)" name="btn_update" value="Salvar">
+        </div>
+        
+        
+
+        <!--form de deletes-->
+            <form id="form_delete" action="" method="POST">
+                <input type="hidden" name="idI" value="<?php echo $produto['id'];?>">
+                <input type="submit" class="btn btn-dark" onclick="deletes()" name="deletar" value="deletar">
+            </form>
+        </div>
+                <br>
+                    <div id="resposta"></div>
         <?php
+
+        $controle ++;
+
      }
      }else{
         echo "<h2 style='color: #ff0000'>Não a nada no banco!</h2>";

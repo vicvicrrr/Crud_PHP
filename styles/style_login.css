@@ -33,11 +33,9 @@ body{
 }
 #usuario{
     width:320px
-
 }
 #senha{
     width:320px
-
 }
 #div_name{
     background-color: rgb(247 247 247);
@@ -45,7 +43,6 @@ body{
 #eye{
     display: flex;
     background-color: rgb(247 247 247);
-
 }
 i{
     font-size: 20px;
